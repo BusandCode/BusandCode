@@ -1,15 +1,21 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Outfit } from 'next/font/google';
+import { Ovo } from 'next/font/google'
 import "./globals.css";
+import NavBar from "@/components/NavBar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+
+const outfit = Outfit({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-poppins',
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
+})
+const ovo = Ovo({
+  subsets: ['latin'], // Or other desired subsets
+  weight: ['400'], // Example weights, adjust as needed
+  display: 'swap',
+})
 
 export const metadata = {
   title: "Create Next App",
@@ -20,8 +26,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+         className={`${ovo.className} ${outfit.className}`}
       >
+        <NavBar />
         {children}
       </body>
     </html>
