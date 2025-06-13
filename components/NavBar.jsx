@@ -32,10 +32,10 @@ const Nav = () => {
       </a>
       
       <a 
-        href="#experience" 
-        onClick={() => setActiveNav("#experience")}  
+        href="#service" 
+        onClick={() => setActiveNav("#service")}  
         className={`p-4 rounded-full flex text-gray-300 text-xl transition-all duration-300 hover:bg-black/30 ${
-          activeNav === "#experience" ? "bg-orange-500 text-gray-900" : ""
+          activeNav === "#service" ? "bg-orange-500 text-gray-900" : ""
         }`}
       >
         <BiBook />
