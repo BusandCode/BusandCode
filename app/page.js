@@ -59,7 +59,7 @@ const Hero = () => {
       
       <About />
       <Services />
-      <MyWorks />
+      {/* <MyWorks /> */}
     </section>
   )
 }

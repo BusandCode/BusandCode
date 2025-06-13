@@ -19,13 +19,13 @@ const About = () => {
           </div>
           
           <div className='flex-1'>
-            <p className='pb-6 text-gray-400 text-[14px] md:text-[16px] leading-relaxed'>
+            <p className='pb-6 text-gray-400 text-[14px] text-center lg:text-justify md:text-[16px] leading-relaxed'>
               I am a software engineer with over two years of professional
               expertise in the field. Throughout my career, I have had the privilege
               of collaborating with prestigious organizations, contributing to their success and growth.
             </p>
             
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5 mb-8'>
+          <div className='w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5 mb-8'>
             <article className='w-full max-w-[280px] mx-auto md:mx-0 h-[180px] md:h-[195px] 
             cursor-pointer rounded-[8px] border-[1px] border-[#D8D8D8] 
             hover:shadow-lg hover:shadow-orange-500/20 hover:border-orange-400 hover:bg-gray-800/10 transition-all duration-300 flex flex-col justify-center items-start gap-3 px-4'>
