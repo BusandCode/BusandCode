@@ -1,7 +1,8 @@
 import About from '@/components/About'
-import MyWorks from '@/components/MyWorks'
+// import MyWorks from '@/components/MyWorks'
 import Services from '@/components/Services'
 import Link from 'next/link'
+import Image from 'next/image'
 import React from 'react'
 import { FiDownload } from "react-icons/fi";
 
@@ -10,7 +11,7 @@ const Hero = () => {
     <section className='w-full text-white flex flex-col justify-center gap-8 md:gap-11 items-center py-10 px-4'>
       <div className='flex flex-col justify-center gap-6 md:gap-8 items-center'>
         <div className='flex justify-center items-center'>
-          <img 
+          <Image 
             src="/busand.jpg" 
             alt="portfolio-image" 
             width={200} 
@@ -18,7 +19,7 @@ const Hero = () => {
             className='w-[150px] h-[150px] md:w-[200px] md:h-[200px] lg:max-w-[400px] lg:max-h-[400px] rounded-[75px] md:rounded-[100px] object-cover'
           />
         </div>
-        <h1 className='text-[20px] md:text-[28px] font-normal text-center'>Hi! I'm Andrew Adetokunbo 👋🏻</h1>
+        <h1 className='text-[20px] md:text-[28px] font-normal text-center'>Hi! I&apos;m Andrew Adetokunbo 👋🏻</h1>
       </div>
       
       <div className='flex flex-col justify-center gap-6 md:gap-8 items-center text-center w-full max-w-6xl'>
@@ -38,7 +39,7 @@ const Hero = () => {
             className='w-full md:w-[200px] p-3 h-[56px] md:h-[64px] flex justify-center items-center text-center gap-3 bg-[#FF6E00] rounded-[28px] md:rounded-[50px] text-[16px] md:text-[18px] text-[#ffffff] hover:bg-[#e55a00] transition-colors'
           >
             <span>connect with me</span>
-            <img 
+            <Image 
               src="/connect-with-me-arrow.png" 
               alt="connect arrow" 
               width={15} 

@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 const About = () => {
@@ -9,7 +10,7 @@ const About = () => {
         
         <div className='flex lg:flex-row flex-col justify-center gap-8 lg:gap-10 max-w-[1000px] mx-auto'>
           <div className='flex justify-center lg:justify-start'>
-            <img 
+            <Image 
               src="/busand.jpg" 
               alt="Andrew Adetokunbo portrait" 
               width={400} 
@@ -29,7 +30,7 @@ const About = () => {
             <article className='w-full max-w-[280px] mx-auto md:mx-0 h-[180px] md:h-[195px] 
             cursor-pointer rounded-[8px] border-[1px] border-[#D8D8D8] 
             hover:shadow-lg hover:shadow-orange-500/20 hover:border-orange-400 hover:bg-gray-800/10 transition-all duration-300 flex flex-col justify-center items-start gap-3 px-4'>
-              <img src="/code-icon.png" alt="Code icon" width={22} height={20}/>
+              <Image src="/code-icon.png" alt="Code icon" width={22} height={20}/>
               <h4 className='text-[#fff] text-[18px] md:text-[20px] font-medium'>Languages</h4>
               <p className='text-[13px] md:text-[15px] text-gray-400 font-normal leading-relaxed'>
                 Javascript, Python and C
@@ -37,7 +38,7 @@ const About = () => {
             </article>
             
             <article className='w-full max-w-[280px] mx-auto md:mx-0 h-[180px] md:h-[195px] cursor-pointer rounded-[8px] border-[1px] border-[#D8D8D8] hover:shadow-lg hover:shadow-orange-500/20 hover:border-orange-400 hover:bg-gray-800/10 transition-all duration-300 flex flex-col justify-center items-start gap-3 px-4'>
-              <img src="/edu-icon.png" alt="Education icon" width={28} height={24}/>
+              <Image src="/edu-icon.png" alt="Education icon" width={28} height={24}/>
               <h4 className='text-[#fff] text-[18px] md:text-[20px] font-medium'>Education</h4>
               <p className='text-[13px] md:text-[15px] text-gray-400 font-normal'>
                 B.Tech in Software Engineering
@@ -45,7 +46,7 @@ const About = () => {
             </article>
             
             <article className='w-full max-w-[280px] mx-auto md:mx-0 h-[180px] md:h-[195px] cursor-pointer rounded-[8px] border-[1px] border-[#D8D8D8] hover:shadow-lg hover:shadow-orange-500/20 hover:border-orange-400 hover:bg-gray-800/10 transition-all duration-300 flex flex-col justify-center items-start gap-3 px-4 md:col-span-2 lg:col-span-1'>
-              <img src="/project-icon.png" alt="Projects icon" width={24} height={21.8}/>
+              <Image src="/project-icon.png" alt="Projects icon" width={24} height={21.8}/>
               <h4 className='text-[#fff] text-[18px] md:text-[20px] font-medium'>Projects</h4>
               <p className='text-[13px] md:text-[15px] text-gray-400 font-normal'>
                 Built more than 5 projects
@@ -58,16 +59,16 @@ const About = () => {
               
               <div className='flex flex-wrap justify-center lg:justify-start items-center gap-3'>
                 <div className='w-[65px] hover:shadow-lg hover:shadow-orange-500/20 hover:border-orange-400 hover:bg-gray-800/10 h-[65px] md:w-[75px] md:h-[75px] cursor-pointer flex justify-center items-center rounded-[10px] border-[1px] border-[#848484] transition-all duration-300'>
-                  <img src="/vscode.png" alt="VS Code logo" width={28} height={28} className='md:w-[33px] md:h-[33px]' />
+                  <Image src="/vscode.png" alt="VS Code logo" width={28} height={28} className='md:w-[33px] md:h-[33px]' />
                 </div>
                 <div className='w-[65px] hover:shadow-lg hover:shadow-orange-500/20 hover:border-orange-400 hover:bg-gray-800/10 h-[65px] md:w-[75px] md:h-[75px] cursor-pointer flex justify-center items-center rounded-[10px] border-[1px] border-[#848484] transition-all duration-300'>
-                  <img src="/firebase.png" alt="Firebase logo" width={28} height={28} className='md:w-[33px] md:h-[33px]' />
+                  <Image src="/firebase.png" alt="Firebase logo" width={28} height={28} className='md:w-[33px] md:h-[33px]' />
                 </div>
                 <div className='w-[65px] hover:shadow-lg hover:shadow-orange-500/20 hover:border-orange-400 hover:bg-gray-800/10 h-[65px] md:w-[75px] md:h-[75px] cursor-pointer flex justify-center items-center rounded-[10px] border-[1px] border-[#848484] transition-all duration-300'>
-                  <img src="/figma.png" alt="Figma logo" width={28} height={28} className='md:w-[33px] md:h-[33px]' />
+                  <Image src="/figma.png" alt="Figma logo" width={28} height={28} className='md:w-[33px] md:h-[33px]' />
                 </div>
                 <div className='w-[65px] hover:shadow-lg hover:shadow-orange-500/20 hover:border-orange-400 hover:bg-gray-800/10 h-[65px] md:w-[75px] md:h-[75px] cursor-pointer flex justify-center items-center rounded-[10px] border-[1px] border-[#848484] transition-all duration-300'>
-                  <img src="/git.png" alt="Git logo" width={28} height={28} className='md:w-[33px] md:h-[33px]' />
+                  <Image src="/git.png" alt="Git logo" width={28} height={28} className='md:w-[33px] md:h-[33px]' />
                 </div>
               </div>
             </div>
