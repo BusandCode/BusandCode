@@ -20,7 +20,7 @@ const About = () => {
           </div>
           
           <div className='flex-1'>
-            <p className='pb-6 text-gray-400 text-[20px] text-center lg:text-justify md:text-[25px] leading-relaxed'>
+            <p className='pb-6 text-gray-400 text-[20px] text-center lg:text-justify  leading-relaxed'>
               I am a software engineer with over two years of professional
               expertise in the field. Throughout my career, I have had the privilege
               of collaborating with prestigious organizations, contributing to their success and growth.
