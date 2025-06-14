@@ -20,7 +20,7 @@ const About = () => {
           </div>
           
           <div className='flex-1'>
-            <p className='pb-6 text-gray-400 text-[14px] text-center lg:text-justify md:text-[16px] leading-relaxed'>
+            <p className='pb-6 text-gray-400 text-[20px] text-center lg:text-justify md:text-[25px] leading-relaxed'>
               I am a software engineer with over two years of professional
               expertise in the field. Throughout my career, I have had the privilege
               of collaborating with prestigious organizations, contributing to their success and growth.
@@ -31,24 +31,24 @@ const About = () => {
             cursor-pointer rounded-[8px] border-[1px] border-[#D8D8D8] 
             hover:shadow-lg hover:shadow-orange-500/20 hover:border-orange-400 hover:bg-gray-800/10 transition-all duration-300 flex flex-col justify-center items-start gap-3 px-4'>
               <Image src="/code-icon.png" alt="Code icon" width={22} height={20}/>
-              <h4 className='text-[#fff] text-[18px] md:text-[20px] font-medium'>Languages</h4>
-              <p className='text-[13px] md:text-[15px] text-gray-400 font-normal leading-relaxed'>
+              <h4 className='text-[#fff] text-[20px] md:text-[20px] font-medium'>Languages</h4>
+              <p className='text-[16px] md:text-[17px] text-gray-400 font-normal leading-relaxed'>
                 Javascript, Python and C
               </p>
             </article>
             
             <article className='w-full max-w-[280px] mx-auto md:mx-0 h-[180px] md:h-[195px] cursor-pointer rounded-[8px] border-[1px] border-[#D8D8D8] hover:shadow-lg hover:shadow-orange-500/20 hover:border-orange-400 hover:bg-gray-800/10 transition-all duration-300 flex flex-col justify-center items-start gap-3 px-4'>
               <Image src="/edu-icon.png" alt="Education icon" width={28} height={24}/>
-              <h4 className='text-[#fff] text-[18px] md:text-[20px] font-medium'>Education</h4>
-              <p className='text-[13px] md:text-[15px] text-gray-400 font-normal'>
+              <h4 className='text-[#fff] text-[20px] md:text-[20px] font-medium'>Education</h4>
+              <p className='text-[16px] md:text-[17px] text-gray-400 font-normal'>
                 B.Tech in Software Engineering
               </p>
             </article>
             
             <article className='w-full max-w-[280px] mx-auto md:mx-0 h-[180px] md:h-[195px] cursor-pointer rounded-[8px] border-[1px] border-[#D8D8D8] hover:shadow-lg hover:shadow-orange-500/20 hover:border-orange-400 hover:bg-gray-800/10 transition-all duration-300 flex flex-col justify-center items-start gap-3 px-4 md:col-span-2 lg:col-span-1'>
               <Image src="/project-icon.png" alt="Projects icon" width={24} height={21.8}/>
-              <h4 className='text-[#fff] text-[18px] md:text-[20px] font-medium'>Projects</h4>
-              <p className='text-[13px] md:text-[15px] text-gray-400 font-normal'>
+              <h4 className='text-[#fff] text-[20px] md:text-[20px] font-medium'>Projects</h4>
+              <p className='text-[16px] md:text-[17px] text-gray-400 font-normal'>
                 Built more than 5 projects
               </p>
             </article>
@@ -64,7 +64,8 @@ const About = () => {
                 <div className='w-[65px] hover:shadow-lg hover:shadow-orange-500/20 hover:border-orange-400 hover:bg-gray-800/10 h-[65px] md:w-[75px] md:h-[75px] cursor-pointer flex justify-center items-center rounded-[10px] border-[1px] border-[#848484] transition-all duration-300'>
                   <Image src="/firebase.png" alt="Firebase logo" width={28} height={28} className='md:w-[33px] md:h-[33px]' />
                 </div>
-                <div className='w-[65px] hover:shadow-lg hover:shadow-orange-500/20 hover:border-orange-400 hover:bg-gray-800/10 h-[65px] md:w-[75px] md:h-[75px] cursor-pointer flex justify-center items-center rounded-[10px] border-[1px] border-[#848484] transition-all duration-300'>
+                <div className='w-[65px] hover:shadow-lg 
+                hover:shadow-orange-500/20 hover:border-orange-400 hover:bg-gray-800/10 h-[65px] md:w-[75px] md:h-[75px] cursor-pointer flex justify-center items-center rounded-[10px] border-[1px] border-[#848484] transition-all duration-300'>
                   <Image src="/figma.png" alt="Figma logo" width={28} height={28} className='md:w-[33px] md:h-[33px]' />
                 </div>
                 <div className='w-[65px] hover:shadow-lg hover:shadow-orange-500/20 hover:border-orange-400 hover:bg-gray-800/10 h-[65px] md:w-[75px] md:h-[75px] cursor-pointer flex justify-center items-center rounded-[10px] border-[1px] border-[#848484] transition-all duration-300'>
