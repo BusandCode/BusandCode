@@ -9,8 +9,8 @@ const Services = () => {
         <div className='text-center max-w-[764px] mx-auto'>
             <h3 className='text-[20px] md:text-[24px] font-normal text-center text-white'>What i offer</h3>
             <h1 className='text-[36px] md:text-[48px] lg:text-[60px] font-normal text-center mb-8 text-white'>My services</h1>
-            <p className='text-[20px] text-gray-400'>I am a frontend developer from California, USA with 10 years of experience in multiple 
-            companies like Microsoft, Tesla and Apple.</p>
+            <p className='text-[20px] text-gray-400'>I am a frontend developer from Ondo State, Nigeria with 2 years of experience in multiple 
+            companies like FlexiSaf, CodingKidsAfrica and BlizzCreative.</p>
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10 px-5 place-items-center'>
             <article className='max-w-[335.49px] max-h-[329px] cursor-pointer 
