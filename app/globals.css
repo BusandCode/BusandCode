@@ -1,12 +1,9 @@
 @import "tailwindcss";
 body{
-  font-family: "Ovo", serif;
+  font-family: "Poppins", serif;
   background: #11084a;
   /* background: linear-gradient(45deg, #2d1b69 0%, #11084a 50%, #000000 100%); */
 }
 html{
   scroll-behavior: smooth;
-}
-small{
-  font-family: "Outfit", sans-serif;
 }

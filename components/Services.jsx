@@ -1,44 +1,133 @@
 import React from 'react'
-import { AiOutlineBehance } from "react-icons/ai";
-import { AiFillAndroid } from "react-icons/ai";
-import { SiAdobephotoshop } from "react-icons/si";
+// import { AiOutlineBehance, AiFillAndroid } from "react-icons/ai"
+// import { SiAdobephotoshop } from "react-icons/si"
+import { FaCode, FaMobile, FaPaintBrush } from "react-icons/fa"
+
+const servicesData = [
+  {
+    id: 1,
+    icon: FaCode,
+    title: "Web Development",
+    description: "Creating responsive and modern websites using the latest technologies like React, Next.js, and Tailwind CSS to deliver exceptional user experiences.",
+    technologies: ["React", "Next.js", "JavaScript", "TypeScript"]
+  },
+  {
+    id: 2,
+    icon: FaMobile,
+    title: "Mobile App Development",
+    description: "Building cross-platform mobile applications using React Native to bring your ideas to life on iOS and Android devices.",
+    technologies: ["React Native", "Expo Go", "iOS", "Android"]
+  },
+  {
+    id: 3,
+    icon: FaPaintBrush,
+    title: "UI/UX Design",
+    description: "Designing eye-catching visuals, user interfaces, and brand identities that communicate your message effectively and leave a lasting impression.",
+    technologies: ["Figma", "Adobe XD", "Photoshop", "Illustrator"]
+  }
+]
 
 const Services = () => {
   return (
-    <section className='mt-16' id='service'>
-        <div className='text-center max-w-[764px] mx-auto'>
-            <h3 className='text-[20px] md:text-[24px] font-normal text-center text-white'>What i offer</h3>
-            <h1 className='text-[36px] md:text-[48px] lg:text-[60px] font-normal text-center mb-8 text-white'>My services</h1>
-            <p className='text-[20px] text-gray-400'>I am a frontend developer from Ondo State, Nigeria with 2 years of experience in multiple 
-            companies like FlexiSaf, CodingKidsAfrica and BlizzCreative.</p>
+    <section className='py-16  px-4' id='service'>
+      <div className='text-center max-w-[764px] mx-auto mb-16'>
+        <h3 className='text-orange-500 text-lg font-medium mb-3'>
+          What I Offer
+        </h3>
+        <h1 className='text-[36px] md:text-[48px] lg:text-[60px] font-normal text-center mb-8 text-white'>
+          My <span className='text-orange-500'>Services</span>
+        </h1>
+        <p className='text-[18px] md:text-[20px] text-gray-400 leading-relaxed'>
+          I am a frontend developer from Nigeria with 2 years of experience in multiple 
+          companies like FlexiSaf, CodingKidsAfrica and BlizzCreative.
+        </p>
+      </div>
+
+      <div className='max-w-7xl mx-auto'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 place-items-center'>
+          {servicesData.map((service) => {
+            const IconComponent = service.icon
+            return (
+              <article 
+                key={service.id}
+                className='w-full max-w-[350px] h-auto min-h-[320px] cursor-pointer 
+                         rounded-xl border-2 border-gray-600 bg-gray-900/30 backdrop-blur-sm
+                         flex flex-col gap-6 items-start p-6 group
+                         hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-400 
+                         hover:bg-gray-800/40 hover:-translate-y-2 transition-all duration-300 ease-in-out'
+              >
+                {/* Icon Container */}
+                <div className='relative'>
+                  <div className='w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 
+                                rounded-xl flex items-center justify-center shadow-lg
+                                group-hover:scale-110 group-hover:rotate-3 transition-all duration-300'>
+                    <IconComponent className='text-white text-2xl' />
+                  </div>
+                  {/* Glow effect */}
+                  <div className='absolute inset-0 w-16 h-16 bg-orange-500/20 rounded-xl blur-xl 
+                                opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10'></div>
+                </div>
+
+                {/* Content */}
+                <div className='flex flex-col gap-4 flex-grow'>
+                  <h3 className='font-semibold text-2xl text-white group-hover:text-orange-300 
+                               transition-colors duration-300'>
+                    {service.title}
+                  </h3>
+                  
+                  <p className='font-normal text-[16px] text-gray-400 leading-relaxed flex-grow
+                              group-hover:text-gray-300 transition-colors duration-300'>
+                    {service.description}
+                  </p>
+
+                  {/* Technology Tags */}
+                  <div className='flex flex-wrap gap-2 mt-auto'>
+                    {service.technologies.map((tech, index) => (
+                      <span 
+                        key={index}
+                        className='px-3 py-1 text-xs bg-orange-500/10 text-orange-300 
+                                 rounded-full border border-orange-500/20
+                                 group-hover:bg-orange-500/20 group-hover:text-orange-200
+                                 transition-all duration-300'
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Hover Arrow Indicator */}
+                <div className='absolute top-4 right-4 opacity-0 group-hover:opacity-100 
+                              transform translate-x-2 group-hover:translate-x-0 
+                              transition-all duration-300'>
+                  <svg 
+                    className='w-5 h-5 text-orange-400' 
+                    fill='none' 
+                    stroke='currentColor' 
+                    viewBox='0 0 24 24'
+                  >
+                    <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} 
+                          d='M7 17L17 7M17 7H7M17 7V17' />
+                  </svg>
+                </div>
+              </article>
+            )
+          })}
         </div>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10 px-5 place-items-center'>
-            <article className='max-w-[335.49px] max-h-[329px] cursor-pointer 
-            rounded-[8px] border-[2px] border-[#EFEFEF] 
-            flex flex-col gap-5 items-start p-5  hover:shadow-lg hover:shadow-orange-500/20 hover:border-orange-400 hover:bg-gray-800/10 transition-all duration-300 '>
-                <AiOutlineBehance className='text-[white] text-[20px] p-3 bg-[#FF6E00] w-[60px] h-[60px] rounded-[10px]' />
-                <small className='font-medium text-[26px] text-white'>Web development</small>
-                <small className='font-normal text-[16px] text-gray-400'>Creating responsive and modern websites using the latest technologies like React, Next.js, and Tailwind CSS to deliver exceptional user experiences.</small>
-            </article>
-            <article className='max-w-[335.49px] max-h-[329px]  cursor-pointer rounded-[8px] border-[2px] border-[#EFEFEF] 
-            flex flex-col gap-5 items-start p-5 
-             hover:shadow-lg hover:shadow-orange-500/20 hover:border-orange-400 hover:bg-gray-800/10 transition-all duration-300 
-            '>
-                {/* <img src="/mobile-icon.png" alt="" width={47.62} height={47.62}/> */}
-                <AiFillAndroid className='text-[white] text-[20px] p-3 bg-[#FF6E00] w-[60px] h-[60px] rounded-[10px] ' />
-                <small className='font-medium text-[26px] text-white'>Mobile app</small>
-                <small className='font-normal text-[16px] text-gray-400'>
-                Building cross-platform mobile applications using React Native to bring your ideas to life on iOS and Android devices.</small>
-            </article>
-            <article className='max-w-[335.49px] cursor-pointer max-h-[329px] rounded-[8px] border-[2px] border-[#EFEFEF] 
-            flex flex-col gap-5 items-start p-5  hover:shadow-lg hover:shadow-orange-500/20 hover:border-orange-400 hover:bg-gray-800/10 transition-all duration-300 '>
-                <SiAdobephotoshop className='text-[white] text-[20px] p-3 bg-[#FF6E00] w-[60px] h-[60px] rounded-[10px]'/>
-                {/* <img src="/graphics-icon.png" alt="" width={47.62} height={47.62}/> */}
-                <small className='font-medium text-[26px] text-white'>Graphics design</small>
-                <small className='font-normal text-[16px] text-gray-400'>Designing eye-catching visuals, logos, and brand identities that communicate your message effectively and leave a lasting impression.</small>
-            </article>
+
+        {/* Call to Action */}
+        <div className='text-center mt-16'>
+          <p className='text-gray-400 mb-6'>
+            Ready to bring your ideas to life?
+          </p>
+          <button className='px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 
+                           text-white font-medium rounded-full hover:from-orange-600 
+                           hover:to-orange-700 transform hover:scale-105 transition-all 
+                           duration-300 shadow-lg hover:shadow-xl'>
+            Let&apos;s Work Together
+          </button>
         </div>
-      
+      </div>
     </section>
   )
 }

@@ -1,20 +1,15 @@
-import { Outfit } from 'next/font/google';
-import { Ovo } from 'next/font/google'
+import { Poppins } from 'next/font/google';
+// import { Ovo } from 'next/font/google'
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 
 
 
-const outfit = Outfit({
+const poppins = Poppins({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-poppins',
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
-})
-const ovo = Ovo({
-  subsets: ['latin'], // Or other desired subsets
-  weight: ['400'], // Example weights, adjust as needed
-  display: 'swap',
 })
 
 export const metadata = {
@@ -26,7 +21,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-         className={`${ovo.className} ${outfit.className}`}
+         className={`${poppins.className}`}
       >
         <NavBar />
         {children}

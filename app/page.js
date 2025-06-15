@@ -1,10 +1,11 @@
 import About from '@/components/About'
-// import MyWorks from '@/components/MyWorks'
+import MyWorks from '@/components/MyWorks'
 import Services from '@/components/Services'
 import Link from 'next/link'
 import Image from 'next/image'
 import React from 'react'
 import { FiDownload } from "react-icons/fi";
+import Contact from '@/components/Contact'
 
 const Hero = () => {
   return (
@@ -66,7 +67,8 @@ const Hero = () => {
       
       <About />
       <Services />
-      {/* <MyWorks /> */}
+      <MyWorks />
+      <Contact />
     </section>
   )
 }
