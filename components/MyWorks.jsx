@@ -209,7 +209,7 @@ const MyWorks = () => {
   // SSR fallback - show first few items in a grid
   if (!isClient) {
     return (
-      <section className="py-8 sm:py-16 px-4" id="portfolio">
+      <section className="py-8 sm:py-16 px-2" id="portfolio">
         <div className="max-w-6xl mx-auto">
           {/* Header Section */}
           <div className="text-center mb-8 sm:mb-16">
