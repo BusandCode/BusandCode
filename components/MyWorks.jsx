@@ -6,21 +6,21 @@ import React, { useState, useEffect } from 'react'
 const portfolioData = [
   {
     id: 1,
-    title: "Real Estate Management",
-    image: "/work-1.png",
+    title: "DailyLoad",
+    image: "/dailyload.jpg",
     category: "Web Development",
-    github: "https://github.com/AndrewToks/busayomi",
-    demo: "https://real-estate-management-gray.vercel.app/",
-    description: "A comprehensive real estate management platform"
+    github: "https://github.com/BusandCode/DailyLoad",
+    demo: "https://daily-load.vercel.app/",
+    description: "A personal task tracker"
   },
   {
     id: 2,
-    title: "Finance Tracker",
-    image: "/work-2.png",
+    title: "Yotomi",
+    image: "/yotomi.jpg",
     category: "Web Development",
-    github: "https://github.com/AndrewToks/finance-tracker",
-    demo: "https://real-estate-management-ah0.pages.dev/",
-    description: "Personal finance tracking application"
+    github: "https://github.com/BusandCode/yotomi-supermarket",
+    demo: "https://yotomi-supermarket.vercel.app/",
+    description: "A supermarket to buy food"
   },
   {
     id: 3,
