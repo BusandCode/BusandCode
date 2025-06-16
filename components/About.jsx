@@ -4,7 +4,7 @@ import React from 'react'
 
 const About = () => {
   return (
-    <section className='py-16' id='about'>
+    <section className='py-16 px-4' id='about'>
       <div className='max-w-6xl mx-auto'>
         {/* Header Section */}
         <div className='text-center mb-16'>

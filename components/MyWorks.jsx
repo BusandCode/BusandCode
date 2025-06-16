@@ -25,7 +25,7 @@ const portfolioData = [
   {
     id: 3,
     title: "BMI Calculator",
-    image: "/work-3.png",
+    image: "/",
     category: "Web Development",
     github: "https://github.com/AndrewToks/bmi-calculator",
     demo: "https://bmi-calculator-lake-one.vercel.app/",
@@ -34,7 +34,7 @@ const portfolioData = [
   {
     id: 4,
     title: "Yotomi Supermarket",
-    image: "/work-4.png",
+    image: "/",
     category: "Web Development",
     github: "https://github.com/AndrewToks/yotomi-supermarket",
     demo: "https://yotomi-supermarket.vercel.app/",
@@ -43,7 +43,7 @@ const portfolioData = [
   {
     id: 5,
     title: "ReadEvolve",
-    image: "/work-5.png",
+    image: "/",
     category: "Web Development",
     github: "https://github.com/AndrewToks/read-evolve",
     demo: "https://read-evolve.vercel.app/",
@@ -52,7 +52,7 @@ const portfolioData = [
   {
     id: 6,
     title: "Travel Guide",
-    image: "/work-6.png",
+    image: "/",
     category: "Web Development",
     github: "https://github.com/AndrewToks/travel-guide",
     demo: "https://travel-guide-demo.vercel.app/",

@@ -1,14 +1,41 @@
+"use client"
 import About from '@/components/About'
 import MyWorks from '@/components/MyWorks'
 import Services from '@/components/Services'
 import Link from 'next/link'
 import Image from 'next/image'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { FiDownload } from "react-icons/fi";
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 
 const Hero = () => {
+  const jobTitles = [
+    "Software Engineer",
+    "Frontend Developer", 
+    "Mobile App Developer",
+    "Graphics Designer"
+  ];
+  
+  const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsAnimating(true);
+      
+      setTimeout(() => {
+        setCurrentTitleIndex((prevIndex) => 
+          (prevIndex + 1) % jobTitles.length
+        );
+        setIsAnimating(false);
+      }, 300);
+      
+    }, 2000); // 2 second interval
+
+    return () => clearInterval(interval);
+  }, [jobTitles.length]);
+
   return (
     <section className='w-full text-white flex flex-col 
     justify-center gap-8 md:gap-11 items-center'>
@@ -27,7 +54,22 @@ const Hero = () => {
       
       <div className='flex flex-col justify-center gap-6 md:gap-8 items-center text-center w-full max-w-6xl'>
         <h1 className='text-[35px] md:text-[48px] lg:text-[50px] max-w-[300px] md:max-w-[400px] lg:max-w-[507px] text-center leading-tight'>
-          Software Engineer based in Nigeria.
+          <span 
+            className={`inline-block transition-all duration-500 ease-in-out ${
+              isAnimating 
+                ? 'opacity-0 transform translate-y-2 scale-95' 
+                : 'opacity-100 transform translate-y-0 scale-100'
+            }`}
+            style={{
+              background: 'linear-gradient(135deg, #ff6b35, #f7931e, #ffd23f)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}
+          >
+            {jobTitles[currentTitleIndex]}
+          </span>
+          {' '}based in Nigeria.
         </h1>
         
         <div className='w-full max-w-[300px] md:max-w-[500px] lg:max-w-[774px]'>
