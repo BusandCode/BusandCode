@@ -24,11 +24,11 @@ const portfolioData = [
   },
   {
     id: 3,
-    title: "BMI Calculator",
-    image: "/",
+    title: "Travel guide",
+    image: "/travel.jpg",
     category: "Web Development",
-    github: "https://github.com/AndrewToks/bmi-calculator",
-    demo: "https://bmi-calculator-lake-one.vercel.app/",
+    github: "https://github.com/BusandCode/travel-guide",
+    demo: "https://travel-guide-blush-seven.vercel.app/",
     description: "Interactive BMI calculation tool"
   },
   {
