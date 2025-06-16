@@ -6,6 +6,7 @@ import Image from 'next/image'
 import React from 'react'
 import { FiDownload } from "react-icons/fi";
 import Contact from '@/components/Contact'
+import Footer from '@/components/Footer'
 
 const Hero = () => {
   return (
@@ -69,6 +70,7 @@ const Hero = () => {
       <Services />
       <MyWorks />
       <Contact />
+      <Footer />
     </section>
   )
 }
