@@ -37,7 +37,7 @@ const Services = () => {
         <h1 className='text-[36px] md:text-[48px] lg:text-[60px] font-normal text-center mb-8 text-white'>
           My <span className='text-orange-500'>Services</span>
         </h1>
-        <p className='text-[18px] md:text-[20px] text-gray-400 leading-relaxed'>
+        <p className='text-[18px] md:text-[20px] text-gray-400 leading-relaxed px-4'>
           I am a software engineer from Nigeria with 2 years of experience in multiple 
           companies like FlexiSaf, CodingKidsAfrica and BlizzCreative.
         </p>
