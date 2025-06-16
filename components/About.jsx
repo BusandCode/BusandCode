@@ -35,12 +35,11 @@ const About = () => {
           <div className='space-y-8'>
             {/* Introduction Text */}
             <div className='text-center lg:text-left'>
-              <p className='text-gray-400 text-lg leading-relaxed mb-8'>
-                I'm Adetokunbo Andrew, a Software Engineer with 2+ years of experience creating 
-                high-performance web applications using Next.js, React, and TailwindCSS. I specialize 
-                in crafting seamless user experiences with reusable code, SEO optimization, and 
-                responsive designs.
-              </p>
+        
+          <p className='text-[18px] md:text-[20px] text-gray-400 leading-relaxed px-4'>
+           I'm Adetokunbo Andrew, I am a software engineer from Nigeria with 2 years of experience in multiple 
+          companies like FlexiSaf, CodingKidsAfrica and BlizzCreative.
+        </p>
             </div>
 
             {/* Stats Cards */}

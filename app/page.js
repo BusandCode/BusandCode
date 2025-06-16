@@ -38,7 +38,7 @@ const Hero = () => {
 
   return (
     <section className='w-full text-white flex flex-col 
-    justify-center gap-8 md:gap-11 items-center'>
+    justify-center gap-8 md:gap-11 items-center mt-10'>
       <div className='flex flex-col justify-center gap-6 md:gap-8 items-center'>
         <div className='flex justify-center items-center'>
           <Image 
@@ -84,7 +84,7 @@ const Hero = () => {
             className='w-3/4 md:w-[200px] p-3 h-[56px] 
             md:h-[64px] flex justify-center items-center text-center gap-2
             bg-gradient-to-r from-orange-500 to-orange-600 rounded-[10px]
-            md:rounded-[50px] text-[17px] md:text-[18px] text-[#ffffff] hover:bg-[#e55a00] transition-colors'
+             text-[17px] text-[#ffffff] hover:bg-[#e55a00] transition-colors'
           >
             <span>Let's Talk</span>
             {/* <Image 
@@ -100,11 +100,11 @@ const Hero = () => {
             href="/" 
             className='w-3/4 md:w-[190px] p-3 h-[56px] md:h-[64px] 
             border-[1px] border-[#A7A7A7] rounded-[10px] 
-            md:rounded-[50px] text-[17px] md:text-[18px] flex justify-center gap-3 items-center
+             text-[17px] flex justify-center gap-3 items-center
              hover:border-white transition-colors'
           >
-            <span>Download Resume</span>
-            <FiDownload className='text-white' />
+            <span>Download CV</span>
+            {/* <FiDownload className='text-white' /> */}
           </Link>
         </div>
       </div>

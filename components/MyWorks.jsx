@@ -33,8 +33,8 @@ const portfolioData = [
   },
   {
     id: 4,
-    title: "Yotomi Supermarket",
-    image: "/",
+    title: "Estate Management",
+    image: "/travel.jpg",
     category: "Web Development",
     github: "https://github.com/AndrewToks/yotomi-supermarket",
     demo: "https://yotomi-supermarket.vercel.app/",
@@ -43,7 +43,7 @@ const portfolioData = [
   {
     id: 5,
     title: "ReadEvolve",
-    image: "/",
+    image: "/travel.jpg",
     category: "Web Development",
     github: "https://github.com/AndrewToks/read-evolve",
     demo: "https://read-evolve.vercel.app/",
@@ -52,7 +52,7 @@ const portfolioData = [
   {
     id: 6,
     title: "Travel Guide",
-    image: "/",
+    image: "/travel.jpg",
     category: "Web Development",
     github: "https://github.com/AndrewToks/travel-guide",
     demo: "https://travel-guide-demo.vercel.app/",
@@ -143,7 +143,7 @@ const MyWorks = () => {
   const renderPortfolioCard = (item) => (
     <div
       key={item.id}
-      className="w-full bg-gray-900/30 backdrop-blur-sm rounded-2xl p-4 sm:p-6 
+      className="w-full bg-gray-900/30 backdrop-blur-sm rounded-2xl px-4 py-8 sm:p-6 
                 border border-gray-700 hover:border-orange-500/50 
                 transition-all duration-300 hover:transform hover:scale-105
                 hover:shadow-xl hover:shadow-orange-500/10

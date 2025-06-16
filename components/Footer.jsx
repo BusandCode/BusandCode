@@ -5,7 +5,7 @@ import { IoLogoTwitter } from "react-icons/io"
 
 const Footer = () => {
   return (
-    <footer className='w-full bg-gray-900/30 backdrop-blur-sm py-8 text-center text-sm'>
+    <footer className='w-full bg-gray-900 py-8 text-center text-sm'>
       <div className='w-full px-4'>
         {/* Logo */}
         <a href="#" className='text-orange-500 text-3xl font-medium mb-8 inline-block hover:text-orange-400 transition-colors duration-300'>
