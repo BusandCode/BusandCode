@@ -29,7 +29,7 @@ const portfolioData = [
     category: "Web Development",
     github: "https://github.com/BusandCode/travel-guide",
     demo: "https://travel-guide-blush-seven.vercel.app/",
-    description: "Interactive BMI calculation tool"
+    description: "Interactive travel guide application"
   },
   {
     id: 4,

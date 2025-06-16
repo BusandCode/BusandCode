@@ -31,7 +31,7 @@ const Hero = () => {
         setIsAnimating(false);
       }, 300);
       
-    }, 2000); // 2 second interval
+    }, 5000); // 2 second interval
 
     return () => clearInterval(interval);
   }, [jobTitles.length]);
