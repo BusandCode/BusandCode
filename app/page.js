@@ -78,7 +78,8 @@ const Hero = () => {
           </p>
         </div>
         
-        <div className='w-full max-w-[320px] md:max-w-[480px] mx-auto flex md:flex-row items-center justify-center text-[16px] md:text-[18px] gap-4 md:gap-3 font-normal'>
+        <div className='w-full max-w-[320px] md:max-w-[480px] mx-auto flex 
+        md:flex-row items-center justify-center text-[16px] md:text-[18px] gap-4 md:gap-3 font-normal'>
           <Link 
             href="#contact" 
             className='w-3/4 md:w-[200px] p-3 h-[56px] 
@@ -86,7 +87,7 @@ const Hero = () => {
             bg-gradient-to-r from-orange-500 to-orange-600 rounded-[10px]
              text-[17px] text-[#ffffff] hover:bg-[#e55a00] transition-colors'
           >
-            <span>Let's Talk</span>
+            <span>Let&apos;s Talk</span>
             {/* <Image 
               src="/connect-with-me-arrow.png" 
               alt="connect arrow" 
@@ -96,8 +97,8 @@ const Hero = () => {
             /> */}
           </Link>
           
-          <Link 
-            href="/" 
+          <a 
+            href="Andrew-Adetokunbo-resume.pdf" download="Andrew Adetokunbo Resume.pdf"
             className='w-3/4 md:w-[190px] p-3 h-[56px] md:h-[64px] 
             border-[1px] border-[#A7A7A7] rounded-[10px] 
              text-[17px] flex justify-center gap-3 items-center
@@ -105,7 +106,7 @@ const Hero = () => {
           >
             <span>Download CV</span>
             {/* <FiDownload className='text-white' /> */}
-          </Link>
+          </a>
         </div>
       </div>
       
