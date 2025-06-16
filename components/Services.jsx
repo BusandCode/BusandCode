@@ -29,7 +29,7 @@ const servicesData = [
 
 const Services = () => {
   return (
-    <section className='py-16  px-4' id='service'>
+    <section className='py-16' id='service'>
       <div className='text-center max-w-[764px] mx-auto mb-16'>
         <h3 className='text-orange-500 text-lg font-medium mb-3'>
           What I Offer
@@ -38,7 +38,7 @@ const Services = () => {
           My <span className='text-orange-500'>Services</span>
         </h1>
         <p className='text-[18px] md:text-[20px] text-gray-400 leading-relaxed'>
-          I am a frontend developer from Nigeria with 2 years of experience in multiple 
+          I am a software engineer from Nigeria with 2 years of experience in multiple 
           companies like FlexiSaf, CodingKidsAfrica and BlizzCreative.
         </p>
       </div>

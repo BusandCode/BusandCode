@@ -40,7 +40,7 @@ const Hero = () => {
             href="/" 
             className='w-3/4 md:w-[200px] p-3 h-[56px] 
             md:h-[64px] flex justify-center items-center text-center gap-2
-             bg-[#FF6E00] rounded-[28px] md:rounded-[50px] text-[17px] md:text-[18px] text-[#ffffff] hover:bg-[#e55a00] transition-colors'
+             bg-gradient-to-r from-orange-500 to-orange-600 rounded-[28px] md:rounded-[50px] text-[17px] md:text-[18px] text-[#ffffff] hover:bg-[#e55a00] transition-colors'
           >
             <span>connect</span>
             <Image 

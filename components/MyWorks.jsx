@@ -209,7 +209,7 @@ const MyWorks = () => {
   // SSR fallback - show first few items in a grid
   if (!isClient) {
     return (
-      <section className="py-8 sm:py-16 px-2" id="portfolio">
+      <section className="py-8 sm:py-16" id="portfolio">
         <div className="max-w-6xl mx-auto">
           {/* Header Section */}
           <div className="text-center mb-8 sm:mb-16">
@@ -248,7 +248,7 @@ const MyWorks = () => {
         </div>
 
         {/* Portfolio Slider */}
-        <div className="relative max-w-5xl mx-auto">
+        <div className="relative max-w-6xl w-full mx-auto">
           <div 
             className="overflow-hidden"
             onTouchStart={handleTouchStart}
