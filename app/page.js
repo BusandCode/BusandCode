@@ -11,7 +11,7 @@ import Footer from '@/components/Footer'
 const Hero = () => {
   return (
     <section className='w-full text-white flex flex-col 
-    justify-center gap-8 md:gap-11 items-center py-10 px-4'>
+    justify-center gap-8 md:gap-11 items-center'>
       <div className='flex flex-col justify-center gap-6 md:gap-8 items-center'>
         <div className='flex justify-center items-center'>
           <Image 
@@ -26,7 +26,7 @@ const Hero = () => {
       </div>
       
       <div className='flex flex-col justify-center gap-6 md:gap-8 items-center text-center w-full max-w-6xl'>
-        <h1 className='text-[35px] md:text-[48px] lg:text-[60px] max-w-[300px] md:max-w-[400px] lg:max-w-[507px] text-center leading-tight'>
+        <h1 className='text-[35px] md:text-[48px] lg:text-[50px] max-w-[300px] md:max-w-[400px] lg:max-w-[507px] text-center leading-tight'>
           Software Engineer based in Nigeria.
         </h1>
         
