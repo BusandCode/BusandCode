@@ -83,26 +83,26 @@ const Hero = () => {
             href="/" 
             className='w-3/4 md:w-[200px] p-3 h-[56px] 
             md:h-[64px] flex justify-center items-center text-center gap-2
-             bg-gradient-to-r from-orange-500 to-orange-600 rounded-[28px] md:rounded-[50px] text-[17px] md:text-[18px] text-[#ffffff] hover:bg-[#e55a00] transition-colors'
+             bg-gradient-to-r from-orange-500 to-orange-600 rounded-[10px] md:rounded-[50px] text-[17px] md:text-[18px] text-[#ffffff] hover:bg-[#e55a00] transition-colors'
           >
-            <span>connect</span>
-            <Image 
+            <span>Let's Talk</span>
+            {/* <Image 
               src="/connect-with-me-arrow.png" 
               alt="connect arrow" 
               width={15} 
               height={15} 
               className='flex justify-center items-center mt-[2px]' 
-            />
+            /> */}
           </Link>
           
           <Link 
             href="/" 
             className='w-3/4 md:w-[190px] p-3 h-[56px] md:h-[64px] 
-            border-[1px] border-[#A7A7A7] rounded-[28px] 
+            border-[1px] border-[#A7A7A7] rounded-[10px] 
             md:rounded-[50px] text-[17px] md:text-[18px] flex justify-center gap-3 items-center
              hover:border-white transition-colors'
           >
-            <span>my resume</span>
+            <span>Download Resume</span>
             <FiDownload className='text-white' />
           </Link>
         </div>
