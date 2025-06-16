@@ -69,7 +69,7 @@ const Contact = () => {
   // bg-gray-900
 
   return (
-    <section id="contact" className="w-full mb-32 py-16">
+    <section id="contact" className="w-full py-16">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
