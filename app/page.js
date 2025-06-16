@@ -80,10 +80,11 @@ const Hero = () => {
         
         <div className='w-full max-w-[320px] md:max-w-[480px] mx-auto flex md:flex-row items-center justify-center text-[16px] md:text-[18px] gap-4 md:gap-3 font-normal'>
           <Link 
-            href="/" 
+            href="#contact" 
             className='w-3/4 md:w-[200px] p-3 h-[56px] 
             md:h-[64px] flex justify-center items-center text-center gap-2
-             bg-gradient-to-r from-orange-500 to-orange-600 rounded-[10px] md:rounded-[50px] text-[17px] md:text-[18px] text-[#ffffff] hover:bg-[#e55a00] transition-colors'
+            bg-gradient-to-r from-orange-500 to-orange-600 rounded-[10px]
+            md:rounded-[50px] text-[17px] md:text-[18px] text-[#ffffff] hover:bg-[#e55a00] transition-colors'
           >
             <span>Let's Talk</span>
             {/* <Image 

@@ -36,7 +36,7 @@ const About = () => {
             {/* Introduction Text */}
             <div className='text-center lg:text-left'>
               <p className='text-gray-400 text-lg leading-relaxed mb-8'>
-                I'm Adetokunbo Andrew, a Frontend developer with 2+ years of experience creating 
+                I'm Adetokunbo Andrew, a Software Engineer with 2+ years of experience creating 
                 high-performance web applications using Next.js, React, and TailwindCSS. I specialize 
                 in crafting seamless user experiences with reusable code, SEO optimization, and 
                 responsive designs.
@@ -61,7 +61,7 @@ const About = () => {
                     Experience
                   </h4>
                   <p className='text-gray-400 text-sm'>
-                    2+ Years Working
+                    2 Years Working
                   </p>
                 </div>
               </div>
@@ -84,7 +84,7 @@ const About = () => {
                     Projects
                   </h4>
                   <p className='text-gray-400 text-sm'>
-                    10+ Completed
+                    10 Completed
                   </p>
                 </div>
               </div>
