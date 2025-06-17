@@ -13,7 +13,7 @@ const Hero = () => {
   const jobTitles = [
     "Software Engineer",
     "Frontend Developer", 
-    "Mobile App Developer",
+    "App Developer",
     "Graphics Designer"
   ];
   
