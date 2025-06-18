@@ -22,7 +22,7 @@ const portfolioData = [
     github: "https://github.com/BusandCode/yotomi-supermarket",
     demo: "https://yotomi-supermarket.vercel.app/",
     description: "E-commerce platform for supermarket",
-    stack:["Nextjs", "Tailwindcss", "Firebase"]
+    stack:["Nextjs", "Tailwindcss"]
 
   },
   {
@@ -33,17 +33,17 @@ const portfolioData = [
     github: "https://github.com/BusandCode/travel-guide",
     demo: "https://travel-guide-blush-seven.vercel.app/",
     description: "Interactive travel guide application",
-    stack:["Nextjs", "Tailwindcss", "Firebase"]
+    stack:["Reactjs", "CSS"]
 
   },
   {
     id: 4,
     title: "Estate Management",
-    image: "/travel.jpg",
+    image: "/estate.jpg",
     category: "Web Development",
-    github: "https://github.com/AndrewToks/yotomi-supermarket",
-    demo: "https://yotomi-supermarket.vercel.app/",
-    description: "E-commerce platform for supermarket",
+    github: "https://github.com/BusandCode/estate-management",
+    demo: "https://real-estate-management-gray.vercel.app/",
+    description: "",
     stack:["Nextjs", "Tailwindcss", "Firebase"]
 
   },
