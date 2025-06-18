@@ -11,7 +11,8 @@ const portfolioData = [
     category: "Web Development",
     github: "https://github.com/BusandCode/DailyLoad",
     demo: "https://daily-load.vercel.app/",
-    description: "A personal task tracker"
+    description: "A personal task tracker",
+    stack:["Nextjs", "Tailwindcss", "Firebase"]
   },
   {
     id: 2,
@@ -20,7 +21,9 @@ const portfolioData = [
     category: "Web Development",
     github: "https://github.com/BusandCode/yotomi-supermarket",
     demo: "https://yotomi-supermarket.vercel.app/",
-    description: "A supermarket to buy food"
+    description: "E-commerce platform for supermarket",
+    stack:["Nextjs", "Tailwindcss", "Firebase"]
+
   },
   {
     id: 3,
@@ -29,7 +32,9 @@ const portfolioData = [
     category: "Web Development",
     github: "https://github.com/BusandCode/travel-guide",
     demo: "https://travel-guide-blush-seven.vercel.app/",
-    description: "Interactive travel guide application"
+    description: "Interactive travel guide application",
+    stack:["Nextjs", "Tailwindcss", "Firebase"]
+
   },
   {
     id: 4,
@@ -38,16 +43,20 @@ const portfolioData = [
     category: "Web Development",
     github: "https://github.com/AndrewToks/yotomi-supermarket",
     demo: "https://yotomi-supermarket.vercel.app/",
-    description: "E-commerce platform for supermarket"
+    description: "E-commerce platform for supermarket",
+    stack:["Nextjs", "Tailwindcss", "Firebase"]
+
   },
   {
     id: 5,
-    title: "ReadEvolve",
-    image: "/travel.jpg",
+    title: "BMI Calculator",
+    image: "/bmi.jpg",
     category: "Web Development",
-    github: "https://github.com/AndrewToks/read-evolve",
-    demo: "https://read-evolve.vercel.app/",
-    description: "Reading platform for book enthusiasts"
+    github: "https://github.com/BusandCode/bmi-calculator",
+    demo: "https://bmi-calculator-lake-one.vercel.app/",
+    description: "BMI is a screening tool that calculates the ratio of your weight to your height squared. ",
+    stack:["ReactJs", "CSS"]
+
   },
   {
     id: 6,
@@ -56,7 +65,9 @@ const portfolioData = [
     category: "Web Development",
     github: "https://github.com/AndrewToks/travel-guide",
     demo: "https://travel-guide-demo.vercel.app/",
-    description: "Interactive travel guide application"
+    description: "Interactive travel guide application",
+    stack:["Nextjs", "Tailwindcss", "Firebase"]
+
   }
 ]
 
@@ -172,9 +183,24 @@ const MyWorks = () => {
           <p className="text-orange-500 text-sm font-medium mb-3">
             {item.category}
           </p>
-          <p className="text-gray-400 text-sm leading-relaxed">
+          <p className="text-gray-400 text-sm leading-relaxed mb-4">
             {item.description}
           </p>
+
+          {/* Technology Stack Tags - Same styling as Services */}
+          <div className='flex flex-wrap gap-2 mb-4'>
+            {item.stack.map((tech, index) => (
+              <span 
+                key={index}
+                className='px-3 py-1 text-xs rounded-full border border-orange-500/20
+                         bg-orange-500/10 text-orange-300 
+                         group-hover:bg-orange-500/20 group-hover:text-orange-200
+                         transition-all duration-300'
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
         </div>
 
         {/* Action Buttons */}

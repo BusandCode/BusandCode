@@ -38,7 +38,7 @@ const About = () => {
         
           <p className='text-[18px] md:text-[20px] text-gray-400 leading-relaxed px-4'>
            I'm Adetokunbo Andrew, I am a software engineer from Nigeria with 2 years of experience in multiple 
-          companies like FlexiSaf, CodingKidsAfrica and BlizzCreative.
+          companies like FlexiSaf, CodingKidsAcademy and BlizzCreative.
         </p>
             </div>
 
@@ -60,7 +60,7 @@ const About = () => {
                     Experience
                   </h4>
                   <p className='text-gray-400 text-sm'>
-                    2 Years Working
+                    2+ Years Working
                   </p>
                 </div>
               </div>
@@ -83,17 +83,17 @@ const About = () => {
                     Projects
                   </h4>
                   <p className='text-gray-400 text-sm'>
-                    10 Completed
+                    10+ Completed
                   </p>
                 </div>
               </div>
             </div>
 
             {/* Skills Grid */}
-            <div className='space-y-6'>
+            <div className='space-y-6 flex px-6 flex-col items-start justify-center'>
               <h3 className='text-white text-xl font-bold'>Core Skills</h3>
               
-              <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-6'>
+              <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
                 <div className='bg-gray-900/30 backdrop-blur-sm 
               border-gray-700 
               rounded-2xl p-6 
@@ -172,7 +172,7 @@ const About = () => {
             </div>
             
             {/* Tools Section */}
-            <div className='space-y-6'>
+            <div className='space-y-6 flex px-6 flex-col items-start'>
               <h3 className='text-white text-xl font-bold'>Tools I Use</h3>
               
               <div className='flex flex-wrap gap-4'>
