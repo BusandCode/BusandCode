@@ -90,7 +90,7 @@ const About = () => {
             </div>
 
             {/* Skills Grid */}
-            <div className='space-y-6 flex px-6 flex-col items-start justify-center'>
+            <div className='space-y-6 flex px-4 flex-col items-start justify-center w-full'>
               <h3 className='text-white text-xl font-bold'>Core Skills</h3>
               
               <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>

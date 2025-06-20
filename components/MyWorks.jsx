@@ -27,6 +27,16 @@ const portfolioData = [
   },
   {
     id: 3,
+    title: "ReadEvolve",
+    image: "/readEvolve.jpg",
+    category: "Web Development",
+    github: "https://github.com/BusandCode/readEvolve-app",
+    demo: "//https://read-evolve-app.vercel.app/",
+    description: "ReadEvolve is a personalized, engaging platform for modern learning.",
+    stack:["ReactJs", "TailwindCSS","GlueStack"]
+  },
+  {
+    id: 4,
     title: "Travel guide",
     image: "/travel.jpg",
     category: "Web Development",
@@ -34,39 +44,27 @@ const portfolioData = [
     demo: "https://travel-guide-blush-seven.vercel.app/",
     description: "Interactive travel guide application",
     stack:["Reactjs", "CSS"]
-
   },
-  {
-    id: 4,
+   {
+    id: 5,
     title: "Estate Management",
     image: "/estate.jpg",
     category: "Web Development",
     github: "https://github.com/BusandCode/estate-management",
     demo: "https://real-estate-management-gray.vercel.app/",
     description: "",
-    stack:["Nextjs", "Tailwindcss", "Firebase"]
-
-  },
-  {
-    id: 5,
-    title: "BMI Calculator",
-    image: "/bmi.jpg",
-    category: "Web Development",
-    github: "https://github.com/BusandCode/bmi-calculator",
-    demo: "https://bmi-calculator-lake-one.vercel.app/",
-    description: "BMI is a screening tool that calculates the ratio of your weight to your height squared. ",
     stack:["ReactJs", "CSS"]
 
   },
   {
     id: 6,
-    title: "Travel Guide",
-    image: "/travel.jpg",
+    title: "BMI Calculator",
+    image: "/bmi.jpg",
     category: "Web Development",
-    github: "https://github.com/AndrewToks/travel-guide",
-    demo: "https://travel-guide-demo.vercel.app/",
+    github: "https://github.com/BusandCode/bmi-calculator",
+    demo: "https://bmi-calculator-lake-one.vercel.app/",
     description: "Interactive travel guide application",
-    stack:["Nextjs", "Tailwindcss", "Firebase"]
+    stack:["ReactJs", "CSS"]
 
   }
 ]
