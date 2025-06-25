@@ -43,7 +43,7 @@ const About = () => {
             </div>
 
             {/* Stats Cards */}
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-6 px-6'>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-6 px-4'>
               <div className='bg-gray-900/30 backdrop-blur-sm rounded-2xl p-6 
                             border border-gray-700 hover:border-orange-500/50 
                             transition-all duration-300 hover:transform hover:scale-105
@@ -67,7 +67,7 @@ const About = () => {
 
               <div className='bg-gray-900/30 backdrop-blur-sm 
               border-gray-700 
-              rounded-2xl p-6 
+              rounded-2xl p-6
               border  hover:border-orange-500/50 
               transition-all duration-300 hover:transform hover:scale-105
               hover:shadow-xl hover:shadow-orange-500/10 group'>
@@ -90,13 +90,13 @@ const About = () => {
             </div>
 
             {/* Skills Grid */}
-            <div className='space-y-6 flex px-4 flex-col items-start justify-center w-full'>
+            <div className='space-y-6 flex flex-col items-center lg:items-start justify-center w-full'>
               <h3 className='text-white text-xl font-bold'>Core Skills</h3>
               
               <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
                 <div className='bg-gray-900/30 backdrop-blur-sm 
               border-gray-700 
-              rounded-2xl p-6 
+              rounded-2xl py-4 px-2 
               border  hover:border-orange-500/50 
               transition-all duration-300 hover:transform hover:scale-105
               hover:shadow-xl hover:shadow-orange-500/10 group'>
@@ -121,7 +121,7 @@ const About = () => {
 
                 <div className='bg-gray-900/30 backdrop-blur-sm 
               border-gray-700 
-              rounded-2xl p-6 
+              rounded-2xl py-4 px-2 
               border  hover:border-orange-500/50 
               transition-all duration-300 hover:transform hover:scale-105
               hover:shadow-xl hover:shadow-orange-500/10 group'>
