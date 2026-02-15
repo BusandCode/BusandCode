@@ -5,7 +5,7 @@ import MyWorks from './components/MyWorks';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Nav from './components/NavBar';
-import { FiDownload } from "react-icons/fi"
+import { FiDownload, FiArrowRight, FiMail } from "react-icons/fi"
 
 const App: React.FC = () => {
   const jobTitles: string[] = [
@@ -16,12 +16,18 @@ const App: React.FC = () => {
   ]
   
   const [currentTitleIndex, setCurrentTitleIndex] = useState<number>(0)
-  const [scrollY, setScrollY] = useState<number>(0)
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
 
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY)
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY })
+    }
+    
+    window.addEventListener("mousemove", handleMouseMove)
+    
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove)
+    }
   }, [])
 
   useEffect(() => {
@@ -38,255 +44,321 @@ const App: React.FC = () => {
     <>
       <Nav />
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
         
         * {
-          font-family: 'Syne', sans-serif;
+          font-family: 'Inter', sans-serif;
         }
         
-        .mono {
-          font-family: 'JetBrains Mono', monospace;
+        .space-font {
+          font-family: 'Space Grotesk', sans-serif;
         }
         
-        @keyframes linear-shift {
-          0%, 100% { background-position: 0% 50%; }
+        @keyframes gradient-shift {
+          0% { background-position: 0% 50%; }
           50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
         }
         
-        @keyframes float {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-15px) rotate(3deg); }
+        @keyframes blob-float {
+          0%, 100% { transform: translate(0, 0) scale(1); }
+          33% { transform: translate(30px, -40px) scale(1.1); }
+          66% { transform: translate(-20px, 20px) scale(0.9); }
         }
         
-        @keyframes fade-in-up {
-          from { opacity: 0; transform: translateY(30px); }
+        @keyframes slide-up {
+          from { opacity: 0; transform: translateY(40px); }
           to { opacity: 1; transform: translateY(0); }
         }
         
-        @keyframes slide-in {
-          from { opacity: 0; transform: translateX(-20px); }
-          to { opacity: 1; transform: translateX(0); }
+        @keyframes scale-in {
+          from { opacity: 0; transform: scale(0.8); }
+          to { opacity: 1; transform: scale(1); }
         }
         
-        @keyframes pulse-ring {
-          0% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.3); }
-          50% { box-shadow: 0 0 0 15px rgba(99, 102, 241, 0); }
-          100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0); }
+        @keyframes border-dance {
+          0%, 100% { border-color: rgba(59, 130, 246, 0.5); }
+          50% { border-color: rgba(147, 51, 234, 0.5); }
         }
         
-        .animate-fade-in-up {
-          animation: fade-in-up 0.8s ease-out forwards;
+        @keyframes text-shimmer {
+          0% { background-position: -200% center; }
+          100% { background-position: 200% center; }
         }
         
-        .animate-slide-in {
-          animation: slide-in 0.8s ease-out forwards;
+        .animate-slide-up {
+          animation: slide-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
         
-        .linear-text {
-          background: linear-linear(135deg, #6366f1, #8b5cf6, #a78bfa);
+        .animate-scale-in {
+          animation: scale-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        
+        .gradient-text {
+          background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
           background-size: 200% auto;
-          animation: linear-shift 4s ease infinite;
+          animation: gradient-shift 3s ease infinite;
         }
         
-        .glass-effect {
-          background: rgba(255, 255, 255, 0.02);
-          backdrop-filter: blur(20px);
-          border: 1px solid rgba(255, 255, 255, 0.08);
+        .shimmer-text {
+          background: linear-gradient(
+            90deg,
+            #fff 0%,
+            #fff 40%,
+            #3b82f6 50%,
+            #fff 60%,
+            #fff 100%
+          );
+          background-size: 200% auto;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          animation: text-shimmer 3s linear infinite;
         }
         
-        .mesh-linear {
-          background: 
-            radial-linear(at 25% 25%, rgba(99, 102, 241, 0.08) 0px, transparent 50%),
-            radial-linear(at 75% 75%, rgba(139, 92, 246, 0.08) 0px, transparent 50%),
-            radial-linear(at 50% 50%, rgba(167, 139, 250, 0.06) 0px, transparent 50%);
+        .card-hover {
+          transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
         
-        .hover-lift {
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .card-hover:hover {
+          transform: translateY(-8px) scale(1.02);
+          box-shadow: 0 20px 60px rgba(59, 130, 246, 0.3);
         }
         
-        .hover-lift:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 15px 35px rgba(99, 102, 241, 0.15);
+        .glow-border {
+          position: relative;
+          border: 2px solid transparent;
+          background: linear-gradient(#0f172a, #0f172a) padding-box,
+                      linear-gradient(135deg, #3b82f6, #8b5cf6) border-box;
+          animation: border-dance 3s ease infinite;
         }
         
-        .stagger-1 { animation-delay: 0.1s; opacity: 0; }
-        .stagger-2 { animation-delay: 0.2s; opacity: 0; }
-        .stagger-3 { animation-delay: 0.3s; opacity: 0; }
-        .stagger-4 { animation-delay: 0.4s; opacity: 0; }
-        .stagger-5 { animation-delay: 0.5s; opacity: 0; }
+        .delay-100 { animation-delay: 0.1s; opacity: 0; }
+        .delay-200 { animation-delay: 0.2s; opacity: 0; }
+        .delay-300 { animation-delay: 0.3s; opacity: 0; }
+        .delay-400 { animation-delay: 0.4s; opacity: 0; }
+        .delay-500 { animation-delay: 0.5s; opacity: 0; }
+        .delay-600 { animation-delay: 0.6s; opacity: 0; }
         
-        .noise-overlay {
+        .floating-blob {
+          animation: blob-float 8s ease-in-out infinite;
+        }
+        
+        .grid-background {
+          background-image: 
+            linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+          background-size: 50px 50px;
+        }
+        
+        .spotlight {
+          pointer-events: none;
           position: fixed;
           top: 0;
           left: 0;
           width: 100%;
           height: 100%;
-          opacity: 0.02;
-          pointer-events: none;
-          background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-        }
-        
-        .profile-glow {
-          animation: pulse-ring 3s ease-in-out infinite;
-        }
-        
-        .title-transition {
-          transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+          background: radial-gradient(
+            600px circle at var(--mouse-x) var(--mouse-y),
+            rgba(59, 130, 246, 0.08),
+            transparent 40%
+          );
         }
       `}</style>
 
-      <section className='relative w-full min-h-screen bg-[#0a0d1f] text-white flex flex-col 
-      justify-center gap-12 md:gap-16 items-center pt-32 pb-16 px-4 overflow-hidden'>
+      <section className='relative w-full min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 
+                        text-white flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden'>
         
-        {/* Noise Overlay */}
-        <div className="noise-overlay" />
-
-        {/* Animated Background */}
-        <div className="fixed inset-0 mesh-linear pointer-events-none" />
+        {/* Grid Background */}
+        <div className="absolute inset-0 grid-background opacity-40" />
         
-        {/* Floating Orbs - More Subtle */}
-        <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        {/* Spotlight Effect */}
+        <div 
+          className="spotlight"
+          style={{
+            '--mouse-x': `${mousePosition.x}px`,
+            '--mouse-y': `${mousePosition.y}px`,
+          } as React.CSSProperties}
+        />
+        
+        {/* Animated Blobs */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div 
-            className="absolute w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl"
-            style={{ 
-              top: '15%', 
-              left: '15%',
-              animation: 'float 10s ease-in-out infinite',
-              transform: `translateY(${scrollY * 0.15}px)`
-            }}
+            className="absolute w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-[120px] floating-blob"
+            style={{ top: '10%', left: '10%' }}
           />
           <div 
-            className="absolute w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"
-            style={{ 
-              bottom: '25%', 
-              right: '15%',
-              animation: 'float 12s ease-in-out infinite',
-              animationDelay: '3s',
-              transform: `translateY(${scrollY * -0.1}px)`
-            }}
+            className="absolute w-[400px] h-[400px] bg-purple-500/20 rounded-full blur-[120px] floating-blob"
+            style={{ bottom: '10%', right: '10%', animationDelay: '2s' }}
+          />
+          <div 
+            className="absolute w-[300px] h-[300px] bg-pink-500/20 rounded-full blur-[120px] floating-blob"
+            style={{ top: '50%', right: '20%', animationDelay: '4s' }}
           />
         </div>
 
-        {/* Hero Content */}
-        <div className='relative z-10 flex flex-col justify-center gap-8 md:gap-10 items-center max-w-6xl mx-auto'>
+        {/* Main Content Container */}
+        <div className='relative z-10 max-w-7xl mx-auto w-full py-20 md:py-32'>
           
-          {/* Profile Image Section */}
-          <div className='flex flex-col justify-center gap-6 items-center animate-fade-in-up stagger-1'>
-            <div className='relative'>
-              {/* Glow rings */}
-              <div className="absolute inset-0 rounded-full profile-glow" />
-              <div className="absolute inset-0 bg-linear-to-tr from-indigo-500/20 to-purple-500/20 rounded-full blur-xl" />
+          {/* Hero Grid Layout */}
+          <div className='grid lg:grid-cols-2 gap-12 lg:gap-16 items-center'>
+            
+            {/* Left Column - Text Content */}
+            <div className='space-y-8'>
               
-              {/* Image container */}
-              <div className='relative w-45 h-45 md:w-55 md:h-55 rounded-full 
-                            glass-effect p-2 hover:scale-105 transition-transform duration-500'>
-                <img 
-                  src="/busand.jpg" 
-                  alt="Andrew Adetokunbo" 
-                  width={220} 
-                  height={220} 
-                  className='w-full h-full rounded-full object-cover'
-                  loading="eager"
-                />
+              {/* Badge */}
+              <div className='animate-scale-in delay-100'>
+                <div className='inline-flex items-center gap-2 px-4 py-2 rounded-full 
+                              bg-blue-500/10 border border-blue-500/20 backdrop-blur-sm'>
+                  <div className='relative w-2 h-2'>
+                    <div className='absolute inset-0 rounded-full bg-blue-400 animate-ping' />
+                    <div className='relative w-2 h-2 rounded-full bg-blue-400' />
+                  </div>
+                  <span className='text-sm font-medium text-blue-400 space-font'>
+                    Open to opportunities
+                  </span>
+                </div>
               </div>
-            </div>
-            
-            {/* Status Badge */}
-            <div className='inline-flex items-center gap-2 px-4 py-2 rounded-full glass-effect'>
-              <div className='w-2 h-2 rounded-full bg-indigo-400 animate-pulse' />
-              <span className='text-sm mono text-gray-400'>AVAILABLE FOR WORK</span>
-            </div>
-          </div>
-          
-          {/* Main Text Section */}
-          <div className='flex flex-col justify-center gap-8 md:gap-10 items-center text-center w-full animate-fade-in-up stagger-2'>
-            {/* Greeting */}
-            <div className='space-y-2'>
-              <p className='text-lg md:text-xl text-gray-500 mono'>HEY THERE, I&apos;M</p>
-              <h1 className='text-4xl md:text-5xl font-bold text-gray-100'>
-                ANDREW ADETOKUNBO
-              </h1>
-            </div>
-            
-            {/* Animated Job Title */}
-            <div className='min-h-[120px] md:min-h-[140px] flex items-center justify-center'>
-              <h2 className='text-4xl md:text-6xl lg:text-7xl font-bold leading-tight max-w-[90%] md:max-w-[600px]'>
-                <span 
-                  className='inline-block linear-text title-transition'
-                  key={currentTitleIndex}
-                  style={{
-                    animation: 'fade-in-up 0.5s ease-out'
-                  }}
+              
+              {/* Main Heading */}
+              <div className='space-y-4 animate-slide-up delay-200'>
+                <h1 className='text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight'>
+                  <span className='block text-gray-400 text-2xl sm:text-3xl font-normal mb-2 space-font'>
+                    Hi, I'm
+                  </span>
+                  <span className='shimmer-text block'>
+                    Andrew
+                  </span>
+                  <span className='shimmer-text block'>
+                    Adetokunbo
+                  </span>
+                </h1>
+              </div>
+              
+              {/* Animated Job Title */}
+              <div className='animate-slide-up delay-300'>
+                <div className='min-h-[80px] flex items-center'>
+                  <h2 className='text-3xl sm:text-4xl font-bold space-font'>
+                    <span 
+                      className='gradient-text'
+                      key={currentTitleIndex}
+                      style={{
+                        animation: 'scale-in 0.5s cubic-bezier(0.16, 1, 0.3, 1)'
+                      }}
+                    >
+                      {jobTitles[currentTitleIndex]}
+                    </span>
+                  </h2>
+                </div>
+              </div>
+              
+              {/* Description */}
+              <div className='animate-slide-up delay-400'>
+                <p className='text-lg sm:text-xl text-gray-400 leading-relaxed max-w-xl'>
+                  Transforming ideas into elegant digital solutions. I specialize in building 
+                  modern web applications with a focus on performance, accessibility, and 
+                  exceptional user experiences.
+                </p>
+              </div>
+              
+              {/* CTA Buttons */}
+              <div className='flex flex-wrap gap-4 animate-slide-up delay-500'>
+                <a 
+                  href="#contact" 
+                  className='group px-8 py-4 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 
+                            font-semibold text-base hover:shadow-2xl hover:shadow-blue-500/50 
+                            transition-all duration-300 flex items-center gap-2 space-font
+                            hover:scale-105 active:scale-95'
                 >
-                  {jobTitles[currentTitleIndex]}
-                </span>
-                <br />
-                <span className='text-2xl md:text-3xl lg:text-4xl text-gray-500 font-normal'>
-                  based in Nigeria
-                </span>
-              </h2>
-            </div>
-            
-            {/* Description */}
-            <div className='max-w-[90%] md:max-w-[650px] animate-fade-in-up stagger-3'>
-              <p className='text-gray-400 text-lg md:text-xl leading-relaxed'>
-                Software engineer with 2+ years of experience crafting exceptional digital experiences. 
-                Specializing in frontend development with a passion for clean code and stunning interfaces.
-              </p>
-            </div>
-            
-            {/* CTA Buttons */}
-            <div className='flex flex-col md:flex-row items-center justify-center gap-4 w-full max-w-[90%] md:max-w-[500px] animate-fade-in-up stagger-4'>
-              <a 
-                href="#contact" 
-                className='w-full md:w-auto px-8 py-4 rounded-full 
-                          bg-linear-to-r from-indigo-500 to-purple-600 
-                          font-bold text-lg hover:shadow-xl hover:shadow-indigo-500/30 
-                          transition-all duration-300 transform hover:scale-[1.02] mono'
-              >
-                LET&apos;S CONNECT
-              </a>
+                  <FiMail className='w-5 h-5' />
+                  <span>Get In Touch</span>
+                  <FiArrowRight className='w-5 h-5 group-hover:translate-x-1 transition-transform' />
+                </a>
+                
+                <a 
+                  href="/adetokunbo-andrew-resume.pdf" 
+                  download="Andrew Adetokunbo Resume.pdf"
+                  className='px-8 py-4 rounded-xl bg-white/5 border border-white/10 
+                            font-semibold text-base hover:bg-white/10 backdrop-blur-sm
+                            transition-all duration-300 flex items-center gap-2 space-font
+                            hover:scale-105 active:scale-95'
+                >
+                  <span>Download CV</span>
+                  <FiDownload className='w-5 h-5' />
+                </a>
+              </div>
               
-              <a 
-                href="/adetokunbo-andrew-resume.pdf" 
-                download="Andrew Adetokunbo Resume.pdf"
-                className='w-full md:w-auto px-8 py-4 rounded-full glass-effect 
-                          font-bold text-lg hover:bg-white/5 border border-gray-800
-                          transition-all duration-300 flex items-center justify-center gap-3 mono'
-              >
-                <span>DOWNLOAD CV</span>
-                <FiDownload className='text-indigo-400' />
-              </a>
+              {/* Stats */}
+              <div className='grid grid-cols-3 gap-8 pt-8 animate-slide-up delay-600'>
+                {[
+                  { value: '2+', label: 'Years Experience' },
+                  { value: '10+', label: 'Projects Completed' },
+                  { value: '3', label: 'Happy Clients' }
+                ].map((stat, idx) => (
+                  <div key={idx} className='text-center lg:text-left'>
+                    <div className='text-3xl sm:text-4xl font-bold gradient-text space-font'>
+                      {stat.value}
+                    </div>
+                    <div className='text-sm text-gray-500 mt-1'>
+                      {stat.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
             
-            {/* Stats Grid */}
-            <div className='grid grid-cols-3 gap-6 md:gap-12 pt-8 animate-fade-in-up stagger-5'>
-              <div className='text-center'>
-                <div className='text-3xl md:text-4xl font-bold linear-text'>2+</div>
-                <div className='text-sm text-gray-600 mono mt-1'>YEARS EXP</div>
-              </div>
-              <div className='text-center'>
-                <div className='text-3xl md:text-4xl font-bold linear-text'>10+</div>
-                <div className='text-sm text-gray-600 mono mt-1'>PROJECTS</div>
-              </div>
-              <div className='text-center'>
-                <div className='text-3xl md:text-4xl font-bold linear-text'>3</div>
-                <div className='text-sm text-gray-600 mono mt-1'>COMPANIES</div>
+            {/* Right Column - Profile Image */}
+            <div className='flex justify-center lg:justify-end animate-scale-in delay-300'>
+              <div className='relative group'>
+                {/* Decorative Elements */}
+                <div className='absolute -inset-4 bg-gradient-to-r from-blue-500 to-purple-600 
+                              rounded-3xl blur-2xl opacity-20 group-hover:opacity-30 
+                              transition-opacity duration-500' />
+                
+                {/* Image Container */}
+                <div className='relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] 
+                              lg:w-[400px] lg:h-[400px] rounded-3xl overflow-hidden
+                              glow-border group-hover:scale-105 transition-transform duration-500'>
+                  
+                  {/* Gradient Overlay */}
+                  <div className='absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-purple-500/20 
+                                mix-blend-overlay z-10' />
+                  
+                  {/* Profile Image */}
+                  <img 
+                    src="/busand.jpg" 
+                    alt="Andrew Adetokunbo" 
+                    className='w-full h-full object-cover'
+                    loading="eager"
+                  />
+                </div>
+                
+                {/* Floating Badge */}
+                <div className='absolute -bottom-4 -right-4 px-6 py-3 rounded-2xl 
+                              bg-slate-900 border border-blue-500/30 backdrop-blur-xl
+                              shadow-xl shadow-blue-500/20'>
+                  <div className='flex items-center gap-2'>
+                    <div className='w-2 h-2 rounded-full bg-green-400 animate-pulse' />
+                    <span className='text-sm font-semibold text-white space-font'>
+                      Available
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-
-          {/* Scroll Indicator */}
-          <div className='absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-fade-in-up stagger-5'>
-            <div className='flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition-opacity'>
-              <span className='text-xs mono text-gray-500'>SCROLL DOWN</span>
-              <div className='w-6 h-10 border-2 border-gray-700 rounded-full flex justify-center p-2'>
-                <div className='w-1 h-2 bg-indigo-400 rounded-full animate-bounce' />
-              </div>
+          
+          {/* Location Tag */}
+          <div className='mt-16 flex justify-center lg:justify-start animate-slide-up delay-600'>
+            <div className='inline-flex items-center gap-2 px-4 py-2 rounded-full 
+                          bg-white/5 border border-white/10 backdrop-blur-sm'>
+              <svg className='w-4 h-4 text-blue-400' fill='currentColor' viewBox='0 0 20 20'>
+                <path fillRule='evenodd' d='M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z' clipRule='evenodd' />
+              </svg>
+              <span className='text-sm text-gray-400'>Based in Nigeria</span>
             </div>
           </div>
         </div>
